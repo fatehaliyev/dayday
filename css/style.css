@@ -832,23 +832,27 @@ textarea.form-control {
   border: 0;
 }
 
-/* Responsive Design */
+/* ================================================
+   RESPONSIVE
+================================================ */
+
+/* Tablet: 992px */
 @media (max-width: 992px) {
   .hero-content {
     margin: 0 auto;
   }
-  
+
   .hero-buttons {
     justify-content: center;
   }
-  
+
   .trust-badges {
     justify-content: center;
     flex-wrap: wrap;
   }
 
   .header-cta {
-    gap: 10px;
+    gap: 8px;
   }
 
   .header-cta .phone {
@@ -858,6 +862,11 @@ textarea.form-control {
   .header-cta .btn {
     padding: 10px 16px;
     font-size: 14px;
+  }
+
+  /* Header grid compact on tablet */
+  header .container {
+    column-gap: 15px;
   }
 
   .timeline {
@@ -877,20 +886,55 @@ textarea.form-control {
   .footer-grid {
     grid-template-columns: 1fr 1fr;
   }
+
+  .services-grid {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  }
 }
 
+/* Mobile: 768px */
 @media (max-width: 768px) {
+
+  /* --- Header: switch back to flex so grid doesn't break --- */
+  header {
+    padding: 14px 0;
+  }
+
+  header.scrolled {
+    padding: 10px 0;
+  }
+
+  header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 0;
+  }
+
+  /* Shrink logo so it never wraps */
+  .logo {
+    font-size: 18px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: calc(100% - 60px);
+  }
+
+  /* Nav: off-canvas drawer */
   .nav-links {
     position: fixed;
     top: 0;
     right: -100%;
-    width: 300px;
+    width: min(300px, 80vw);
     height: 100vh;
     background-color: var(--primary-color);
     flex-direction: column;
-    padding-top: 100px;
+    padding-top: 80px;
+    gap: 20px;
     transition: right 0.3s ease;
-    box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+    box-shadow: -5px 0 20px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    justify-content: flex-start;
   }
 
   .nav-links.active {
@@ -899,31 +943,34 @@ textarea.form-control {
 
   .mobile-menu-btn {
     display: block;
-    z-index: 1001;
+    z-index: 1002;
+    flex-shrink: 0;
   }
 
   .header-cta {
     display: none;
   }
 
-  .contact-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .footer-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .stats-grid {
-    grid-template-columns: 1fr;
-  }
-  
+  /* --- Hero --- */
   .hero {
-    clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 96%, 0 100%);
+    padding-top: 80px;
+    min-height: auto;
+    padding-bottom: 80px;
   }
 
   .hero h1 {
-    font-size: clamp(2.1rem, 10vw, 3rem);
+    font-size: clamp(1.8rem, 8vw, 2.8rem);
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
   }
 
   .hero-buttons .btn {
@@ -933,5 +980,139 @@ textarea.form-control {
 
   .trust-badges {
     gap: 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 24px;
+  }
+
+  /* --- Page Header (inner pages) --- */
+  .page-header {
+    padding: 120px 0 60px;
+  }
+
+  .page-header h1 {
+    font-size: clamp(1.6rem, 7vw, 2.4rem);
+  }
+
+  /* --- Sections --- */
+  section {
+    padding: 60px 0;
+  }
+
+  .section-header {
+    margin-bottom: 40px;
+  }
+
+  /* --- Services --- */
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-card {
+    padding: 28px;
+  }
+
+  /* --- Stats --- */
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .stat-item h3 {
+    font-size: 36px;
+  }
+
+  /* --- Timeline --- */
+  .timeline {
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+  }
+
+  .timeline::before {
+    display: none;
+  }
+
+  .timeline-step {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  /* --- Districts --- */
+  .districts-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* --- Contact --- */
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* --- Testimonials --- */
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* --- CTA Banner --- */
+  .cta-banner {
+    padding: 60px 20px;
+  }
+
+  .cta-banner h2 {
+    font-size: clamp(1.4rem, 6vw, 2rem);
+  }
+
+  .cta-banner p {
+    font-size: 16px;
+  }
+
+  /* --- Footer --- */
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .footer-about {
+    max-width: 100%;
+  }
+
+  /* --- WhatsApp float button --- */
+  .whatsapp-float {
+    bottom: 24px;
+    right: 20px;
+    width: 52px;
+    height: 52px;
+    font-size: 26px;
+  }
+}
+
+/* Small phones: 480px */
+@media (max-width: 480px) {
+  .logo {
+    font-size: 16px;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .districts-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1 {
+    font-size: clamp(1.6rem, 7vw, 2.2rem);
+  }
+
+  .contact-info-box {
+    padding: 24px 20px;
+  }
+
+  .testimonial-card {
+    padding: 24px 20px;
+  }
+
+  .service-card {
+    padding: 24px 20px;
   }
 }
