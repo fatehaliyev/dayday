@@ -116,13 +116,12 @@ document.addEventListener('DOMContentLoaded', () => {
       
       const name = document.getElementById('name').value;
       const phone = document.getElementById('phone').value;
-      const address = document.getElementById('address').value;
       const message = document.getElementById('message').value;
       
-      // WhatsApp numarası (+905444180808)
-      const targetNumber = "905444180808";
+      // WhatsApp numarası (+905436031212)
+      const targetNumber = "905436031212";
       
-      const text = `Merhaba, web sitenizden ulaşıyorum.\n\nİsim: ${name}\nTelefon: ${phone}\nAdres: ${address}\nMesaj: ${message}`;
+      const text = `Merhaba, web sitenizden ulaşıyorum.\n\nİsim: ${name}\nTelefon: ${phone}\nMesaj: ${message}`;
       const encodedText = encodeURIComponent(text);
       
       const url = `https://wa.me/${targetNumber}?text=${encodedText}`;
