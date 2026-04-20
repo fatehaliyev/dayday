@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yazı Yükleniyor... | Halı Yıkama Merkezi</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <a href="index.html" class="logo">Halı Yıkama Merkezi<span>.</span></a>
+      <nav class="nav-links">
+        <a href="index.html">Ana Sayfa</a>
+        <a href="hakkimizda.html">Hakkımızda</a>
+        <a href="hizmetler.html">Hizmetlerimiz</a>
+        <a href="hizmet-bolgeleri.html">Hizmet Bölgeleri</a>
+        <a href="blog.html" class="active">Blog</a>
+        <a href="iletisim.html">İletişim</a>
+      </nav>
+      <div class="header-cta">
+        <a href="tel:+905436031212" class="phone"><i class="fas fa-phone-alt"></i> 0543 603 12 12</a>
+        <a href="tel:+905436031212" class="btn btn-primary">Hemen Ara</a>
+      </div>
+      <button class="mobile-menu-btn" aria-label="Menu"><i class="fas fa-bars"></i></button>
+    </div>
+  </header>
+
+  <section class="page-header" id="post-header">
+    <div class="container fade-in">
+      <h1 id="post-title">Yazı Yükleniyor...</h1>
+      <div class="breadcrumb"><a href="index.html">Ana Sayfa</a> / <a href="blog.html">Blog</a> / <span id="post-breadcrumb">...</span></div>
+    </div>
+  </section>
+
+  <article class="service-detail section">
+    <div class="container">
+      <div class="detail-container">
+        <div class="detail-content fade-in" id="post-body">
+          <img id="post-image" src="" alt="Blog Görseli" style="width: 100%; border-radius: 12px; margin-bottom: 30px; display: none;">
+          <!-- Content will be injected here -->
+          <div id="content-render"></div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <footer>
+    <!-- Footer content (matching others) -->
+  </footer>
+
+  <script src="js/script.js"></script>
+  <script>
+    async function loadPostDetail() {
+        const params = new URLSearchParams(window.location.search);
+        const slug = params.get('slug');
+        if (!slug) { window.location.href = 'blog.html'; return; }
+
+        try {
+            const response = await fetch(`content/blog/${slug}.json`);
+            const data = await response.json();
+
+            document.title = `${data.title} | Halı Yıkama Merkezi`;
+            document.getElementById('post-title').innerText = data.title;
+            document.getElementById('post-breadcrumb').innerText = data.title;
+            
+            if (data.featured_image) {
+                const img = document.getElementById('post-image');
+                img.src = data.featured_image;
+                img.style.display = 'block';
+            }
+
+            // Simple Markdown-ish render (Decap uses Markdown by default)
+            // For a production site, you'd use a library like 'marked'
+            document.getElementById('content-render').innerHTML = data.body.replace(/\n/g, '<br>');
+            
+        } catch (error) {
+            console.error('Post yüklenirken hata:', error);
+            document.getElementById('post-title').innerText = 'Yazı Bulunamadı';
+        }
+    }
+    loadPostDetail();
+  </script>
+</body>
+</html>

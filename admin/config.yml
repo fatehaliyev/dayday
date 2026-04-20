@@ -1,0 +1,30 @@
+backend:
+  name: github
+  repo: fatehaliyev/dayday
+  branch: main
+  base_url: https://github-auth-decap.vercel.app
+  auth_endpoint: api/auth
+
+publish_mode: editorial_workflow
+media_folder: "assets/images/blog"
+public_folder: "/assets/images/blog"
+
+collections:
+  - name: "blog"
+    label: "Bloq Yazıları"
+    folder: "content/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    extension: "json"
+    fields:
+      - { label: "Başlıq", name: "title", widget: "string" }
+      - { label: "Nəşr Tarixi", name: "publish_date", widget: "datetime" }
+      - { label: "Ön Şəkil", name: "featured_image", widget: "image" }
+      - { label: "Məzmun", name: "body", widget: "markdown" }
+      - { 
+          label: "SEO Təsviri (Maks 160)", 
+          name: "seo_description", 
+          widget: "string", 
+          pattern: ['.{0,160}', "Maksimum 160 simvol olmalıdır"] 
+        }
+      - { label: "SEO Açar Sözlər", name: "seo_keywords", widget: "string" }
