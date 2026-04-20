@@ -705,7 +705,7 @@ footer {
 
 /* Inner Page Header */
 .page-header {
-  padding: 180px 0 100px;
+  padding: 210px 0 110px;
   background-color: var(--primary-color);
   color: var(--white);
   text-align: center;
@@ -808,8 +808,8 @@ textarea.form-control {
 /* Animations */
 .fade-in {
   opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  transform: translateY(20px);
+  transition: opacity 0.45s ease-out, transform 0.45s ease-out;
 }
 
 .fade-in.visible {
