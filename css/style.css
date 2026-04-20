@@ -180,8 +180,10 @@ header .container {
 
 .nav-links {
   display: flex;
-  gap: 30px;
+  gap: 25px;
   align-items: center;
+  flex: 1;
+  justify-content: center;
 }
 
 .nav-links a {
