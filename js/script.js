@@ -119,8 +119,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const address = document.getElementById('address').value;
       const message = document.getElementById('message').value;
       
-      // WhatsApp Numarası (+905436031212)
-      const targetNumber = "905436031212";
+      // WhatsApp numarası (+905444180808)
+      const targetNumber = "905444180808";
       
       const text = `Merhaba, web sitenizden ulaşıyorum.\n\nİsim: ${name}\nTelefon: ${phone}\nAdres: ${address}\nMesaj: ${message}`;
       const encodedText = encodeURIComponent(text);

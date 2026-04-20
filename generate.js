@@ -1,13 +1,11 @@
 const fs = require('fs');
 
 const districts = [
-    "Beşiktaş", "Şişli", "Kadıköy", "Üsküdar", "Fatih", 
-    "Beyoğlu", "Sarıyer", "Bakırköy", "Bahçelievler", 
-    "Bağcılar", "Gaziosmanpaşa", "Kağıthane", "Güngören", 
-    "Esenler", "Esenyurt", "Beylikdüzü", "Büyükçekmece", 
-    "Küçükçekmece", "Avcılar", "Arnavutköy", "Sultangazi", 
-    "Zeytinburnu", "Eyüp", "Bayrampaşa", "Silivri", 
-    "Çatalca", "Başakşehir"
+    "Arnavutköy", "Avcılar", "Bağcılar", "Bahçelievler", "Bakırköy",
+    "Başakşehir", "Beşiktaş", "Küçükçekmece", "Kağıthane", "Gaziosmanpaşa",
+    "Güngören", "Fatih", "Eyüp", "Esenler", "Esenyurt", "Çatalca",
+    "Beylikdüzü", "Beyoğlu", "Bayrampaşa", "Büyükçekmece", "Sultangazi",
+    "Zeytinburnu", "Silivri", "Şişli", "Sarıyer"
 ];
 
 const templatePath = 'district-template.html';

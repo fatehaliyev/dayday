@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.haliyikamamerkezi.com.tr/sitemap.xml
+Sitemap: https://www.naturelhaliyikama.com.tr/sitemap.xml
