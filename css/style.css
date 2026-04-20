@@ -697,6 +697,38 @@ footer {
   transform: scale(1.1);
 }
 
+/* Phone Floating Button */
+.phone-float {
+  position: fixed;
+  bottom: 40px;
+  left: 40px;
+  width: 60px;
+  height: 60px;
+  background-color: var(--primary-color);
+  color: #FFF;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 26px;
+  box-shadow: 0 4px 10px rgba(26, 39, 68, 0.4);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  animation: pulse-phone 2s infinite;
+}
+
+.phone-float:hover {
+  background-color: var(--accent-color);
+  transform: scale(1.1);
+}
+
+@keyframes pulse-phone {
+  0%   { box-shadow: 0 0 0 0 rgba(26, 39, 68, 0.6); }
+  70%  { box-shadow: 0 0 0 14px rgba(26, 39, 68, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(26, 39, 68, 0); }
+}
+
 @keyframes pulse-whatsapp {
   0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
   70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
@@ -947,8 +979,37 @@ textarea.form-control {
     flex-shrink: 0;
   }
 
+  /* --- Header mobile: show Hemen Ara button, hide phone text --- */
+  header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .logo {
+    flex: 1;
+    min-width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 18px;
+  }
+
   .header-cta {
+    display: flex;
+    flex-shrink: 0;
+    gap: 0;
+  }
+
+  .header-cta .phone {
     display: none;
+  }
+
+  .header-cta .btn {
+    padding: 8px 13px;
+    font-size: 13px;
+    border-radius: 4px;
   }
 
   /* --- Hero --- */
