@@ -7,7 +7,7 @@ backend:
 
 local_backend: true
 
-publish_mode: simple
+squash_merges: true
 
 media_folder: "public/images/uploads"
 public_folder: "/images/uploads"
