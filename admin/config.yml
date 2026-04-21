@@ -28,3 +28,4 @@ collections:
           pattern: ['.{0,160}', "Maksimum 160 simvol olmalıdır"] 
         }
       - { label: "SEO Açar Sözlər", name: "seo_keywords", widget: "string" }
+# Force redeploy
