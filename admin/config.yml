@@ -1,7 +1,7 @@
 backend:
   name: github
   repo: fatehaliyev/dayday
-  branch: main
+  branch: 2026-04-20-qn6c
   base_url: https://dayday.vercel.app
   auth_endpoint: api/auth
 
