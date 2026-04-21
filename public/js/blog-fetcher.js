@@ -15,7 +15,7 @@ async function loadDynamicPosts() {
 
     try {
         // Keş yaddaşını təmizləmək üçün timestamp əlavə edirik
-        const response = await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${path}?ref=main&t=${new Date().getTime()}`);
+        const response = await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${path}?ref=2026-04-20-qn6c&t=${new Date().getTime()}`);
         
         if (!response.ok) {
             console.warn('Dynamic posts not found or folder empty.');
