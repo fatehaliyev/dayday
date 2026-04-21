@@ -3,21 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Yazı Yükleniyor... | Halı Yıkama Merkezi</title>
+  <title>Yaz─▒ Y├╝kleniyor... | Hal─▒ Y─▒kama Merkezi</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
   <header>
     <div class="container">
-      <a href="index.html" class="logo">Halı Yıkama Merkezi<span>.</span></a>
+      <a href="index.html" class="logo">Hal─▒ Y─▒kama Merkezi<span>.</span></a>
       <nav class="nav-links">
         <a href="index.html">Ana Sayfa</a>
-        <a href="hakkimizda.html">Hakkımızda</a>
+        <a href="hakkimizda.html">Hakk─▒m─▒zda</a>
         <a href="hizmetler.html">Hizmetlerimiz</a>
-        <a href="hizmet-bolgeleri.html">Hizmet Bölgeleri</a>
+        <a href="hizmet-bolgeleri.html">Hizmet B├╢lgeleri</a>
         <a href="blog.html" class="active">Blog</a>
-        <a href="iletisim.html">İletişim</a>
+        <a href="iletisim.html">─░leti┼ƒim</a>
       </nav>
       <div class="header-cta">
         <a href="tel:+905436031212" class="phone"><i class="fas fa-phone-alt"></i> 0543 603 12 12</a>
@@ -29,7 +29,7 @@
 
   <section class="page-header" id="post-header">
     <div class="container fade-in">
-      <h1 id="post-title">Yazı Yükleniyor...</h1>
+      <h1 id="post-title">Yaz─▒ Y├╝kleniyor...</h1>
       <div class="breadcrumb"><a href="index.html">Ana Sayfa</a> / <a href="blog.html">Blog</a> / <span id="post-breadcrumb">...</span></div>
     </div>
   </section>
@@ -38,7 +38,7 @@
     <div class="container">
       <div class="detail-container">
         <div class="detail-content fade-in" id="post-body">
-          <img id="post-image" src="" alt="Blog Görseli" style="width: 100%; border-radius: 12px; margin-bottom: 30px; display: none;">
+          <img id="post-image" src="" alt="Blog G├╢rseli" style="width: 100%; border-radius: 12px; margin-bottom: 30px; display: none;">
           <!-- Content will be injected here -->
           <div id="content-render"></div>
         </div>
@@ -61,7 +61,7 @@
             const response = await fetch(`content/blog/${slug}.json`);
             const data = await response.json();
 
-            document.title = `${data.title} | Halı Yıkama Merkezi`;
+            document.title = `${data.title} | Hal─▒ Y─▒kama Merkezi`;
             document.getElementById('post-title').innerText = data.title;
             document.getElementById('post-breadcrumb').innerText = data.title;
             
@@ -76,8 +76,8 @@
             document.getElementById('content-render').innerHTML = data.body.replace(/\n/g, '<br>');
             
         } catch (error) {
-            console.error('Post yüklenirken hata:', error);
-            document.getElementById('post-title').innerText = 'Yazı Bulunamadı';
+            console.error('Post y├╝klenirken hata:', error);
+            document.getElementById('post-title').innerText = 'Yaz─▒ Bulunamad─▒';
         }
     }
     loadPostDetail();
