@@ -5,9 +5,12 @@ backend:
   base_url: https://decap-cms-oauth-provider.vercel.app
   auth_endpoint: api/auth
 
+local_backend: true
+
 publish_mode: editorial_workflow
-media_folder: "assets/images/blog"
-public_folder: "/assets/images/blog"
+
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
 
 collections:
   - name: "blog"
@@ -15,17 +18,8 @@ collections:
     folder: "content/blog"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    extension: "json"
     fields:
       - { label: "Başlıq", name: "title", widget: "string" }
-      - { label: "Nəşr Tarixi", name: "publish_date", widget: "datetime" }
-      - { label: "Ön Şəkil", name: "featured_image", widget: "image" }
-      - { label: "Məzmun", name: "body", widget: "markdown" }
-      - { 
-          label: "SEO Təsviri (Maks 160)", 
-          name: "seo_description", 
-          widget: "string", 
-          pattern: ['.{0,160}', "Maksimum 160 simvol olmalıdır"] 
-        }
-      - { label: "SEO Açar Sözlər", name: "seo_keywords", widget: "string" }
-# Force redeploy
+      - { label: "Tarix", name: "date", widget: "datetime" }
+      - { label: "Şəkil", name: "thumbnail", widget: "image" }
+      - { label: "Mətn", name: "body", widget: "markdown" }
