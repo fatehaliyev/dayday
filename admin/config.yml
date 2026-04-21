@@ -2,7 +2,7 @@ backend:
   name: github
   repo: fatehaliyev/dayday
   branch: 2026-04-20-qn6c
-  base_url: https://dayday.vercel.app
+  base_url: https://www.haliyikamamerkezi.online
   auth_endpoint: api/auth
 
 local_backend: true
