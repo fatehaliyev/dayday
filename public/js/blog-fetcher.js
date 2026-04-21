@@ -11,7 +11,7 @@ async function loadDynamicPosts() {
     // GitHub Repo Details (matching config.yml)
     const owner = 'fatehaliyev';
     const repo = 'dayday';
-    const path = 'content/blog';
+    const path = 'public/content/blog';
 
     try {
         // 1. Fetch the list of files in the blog directory

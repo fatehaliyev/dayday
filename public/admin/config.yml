@@ -21,11 +21,14 @@ public_folder: "/images/uploads"
 collections:
   - name: "blog"
     label: "Bloq Yazıları"
-    folder: "content/blog"
+    folder: "public/content/blog"
+    extension: "json"
+    format: "json"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - { label: "Başlıq", name: "title", widget: "string" }
-      - { label: "Tarix", name: "date", widget: "datetime" }
-      - { label: "Şəkil", name: "thumbnail", widget: "image" }
+      - { label: "Tarix", name: "publish_date", widget: "datetime" }
+      - { label: "Şəkil", name: "featured_image", widget: "image" }
+      - { label: "SEO Açıqlaması", name: "seo_description", widget: "text" }
       - { label: "Mətn", name: "body", widget: "markdown" }
