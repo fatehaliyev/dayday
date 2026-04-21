@@ -14,9 +14,8 @@ async function loadDynamicPosts() {
     const path = 'public/content/blog';
 
     try {
-        // GitHub API yerinə birbaşa faylı yoxlayırıq (və ya siyahını dinamik yaradırıq)
-        // Hal-hazırda ən stabil yol budur:
-        const response = await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${path}?ref=main`);
+        // Keş yaddaşını təmizləmək üçün timestamp əlavə edirik
+        const response = await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${path}?ref=main&t=${new Date().getTime()}`);
         
         if (!response.ok) {
             console.warn('Dynamic posts not found or folder empty.');
